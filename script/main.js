@@ -16,6 +16,18 @@ function sendToDiscord(data) {
     .catch(error => console.error('Error sending data:', error));
 }
 
+function checkPassword() {
+    const correctPassword = '0702';  // Set your password
+    const userPassword = document.getElementById('passwordInput').value;
+    
+    if (userPassword === correctPassword) {
+      document.getElementById('passwordScreen').style.display = 'none';  // Hide the password screen
+    } else {
+      alert('Incorrect password. Please try again.');  // Alert if the password is wrong
+    }
+}
+  
+
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
     Swal.fire({
