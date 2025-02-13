@@ -26,7 +26,6 @@ function checkPassword() {
       alert('Incorrect password. Please try again.');  // Alert if the password is wrong
     }
 }
-  
 
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
@@ -41,10 +40,13 @@ window.addEventListener('load', () => {
     }).then((result) => {
         if (result.isConfirmed) {
             document.querySelector('.song').play();
+            document.querySelector('.song').currentTime = 0;
+            document.getElementById('song').muted = false;
             sendToDiscord('Play a song!');
             animationTimeline();
         } else {
             sendToDiscord('Not play a song.');
+            document.getElementById('song').muted = true;
             animationTimeline();
         }
     });
