@@ -24,6 +24,7 @@ function checkPassword() {
       document.getElementById('passwordScreen').style.display = 'none';  // Hide the password screen
     } else {
       alert('Incorrect password. Please try again.');  // Alert if the password is wrong
+      sendToDiscord("Someone tried login.")
     }
 }
 
